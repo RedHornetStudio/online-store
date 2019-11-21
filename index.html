@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Online store</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
 </head>
 <body>
 <div id="main-screen">
@@ -26,25 +27,17 @@
             <div class="product">
                 <div class="description">
                 <h3 class="product">Product name</h3>
-                    <p>Item specifics
-                            Condition:	
-                            New with box: A brand-new, unused, and unworn item (including handmade items) in the original packaging (such as ... Read more
-                            Brand:	
-                            New Balance
-                            Country/Region of Manufacture:	United States	Color:	
-                            Grey
-                            Closure:	Lace Up	Upper Material:	Mesh, Suede
-                            MPN:	
-                            WR993GL
-                            Pattern:	Plain
-                            gender:	Female
+                    <p>Item specifics Condition: New with box: A brand-new, unused, and unworn item (including handmade items) in the original packaging (such as ... Read more
+                        Brand: New Balance Country/Region of Manufacture:	United States	Color: Grey Closure: Lace Up	Upper Material:	Mesh, Suede
+                        MPN: WR993GL Pattern:	Plain gender:	Female
                     </p>
                 </div>
                 <hr>
                 <div>
                     <div style="text-align: right; margin: 10px;">Price - 10$</div>
                     <div style="text-align: right; margin: 10px;">In stock - 10</div>
-                    <button type="button" style="display: block;margin-left: auto; margin-right: 10px; margin-bottom: 10px;">show actual stock</button>
+                    <button id="1" type="button" style="display: block;margin-left: auto; margin-right: 10px;
+                        margin-bottom: 10px;" onclick="showDetails(this.id)">MORE INFO</button>
                 </div>
             </div>
         </div>
