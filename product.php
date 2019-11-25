@@ -1,3 +1,13 @@
+<?php
+
+    $id = '';
+
+    if(isset($_GET['id'])) {
+        $id = $_GET['id'];
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,23 +16,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Online store</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
 </head>
-<body>
+<body onload="getProduct(<?php echo $id; ?>)">
 <div id="main-screen">
     <header>
         <nav>
             <ul class="nav clearfix">
-                <li class="nav"><a href="" class="nav">HOME</a></li>
+                <li class="nav"><a href="index.html" class="nav">HOME</a></li>
                 <li class="nav"><a href="" class="nav">ABOUT</a></li>
             </ul>
         </nav>
     </header>
-    <div style="text-align: right;">
-        <button type="button" style="margin-right: 20px; margin-top: 10px;">CLEAR ALL PRODUCTS</button>
-        <button type="button" style="margin-right: 20px; margin-top: 10px;">SHOW ALL PRODUCTS</button>
-    </div>
-    <section class="clearfix">
-        
+    <section class="clearfix" id="product-details">
+        <h2 id="product-title"></h2>
+        <p id="product-description"></p>
+        <div id="product-price"></div>
+        <div id="product-stock"></div>
+        <button style="display: block; margin-left: auto;" id="btn-get-actual-stock"
+            onclick="getActualStock(<?php echo $id; ?>)">GET ACTUAL STOCK</button>
     </section>
     <footer>
         <div class="copyright">Copyright 2019 Red Hornet Studio</div>

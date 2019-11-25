@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background: rgb(255, 255, 255);
+    background:  rgb(170, 170, 170);;
 }
 
 #main-screen {
@@ -100,6 +100,18 @@ div.description {
     height: 194px;
 }
 
+div.price-stock {
+    text-align: right;
+    margin: 10px;
+}
+
+button.product {
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 1250px) {
     div.col {
         width: 50%;
@@ -117,5 +129,27 @@ footer {
     margin: 50px;
     text-align: center;
     color: white;
+}
+
+/* product details */
+#product-details {
+    max-width: 500px;
+    margin: auto;
+}
+
+#product-title {
+    text-align: center;
+}
+
+#product-price {
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#product-stock {
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 10px;
 }
 
