@@ -51,7 +51,7 @@ function addProducts() {
             }
         }
     };
-    xhttp.open("POST", "http://localhost/tutorials/warehouse-system/get.php", true);
+    xhttp.open("POST", "https://rhswarehouse.000webhostapp.com/get.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("get=" + "all");
 }
@@ -89,7 +89,7 @@ function getProduct(id) {
             }
         }
     };
-    xhttp.open("POST", "http://localhost/tutorials/warehouse-system/get.php", true);
+    xhttp.open("POST", "https://rhswarehouse.000webhostapp.com/get.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("get=" + id);
 }
@@ -121,7 +121,7 @@ function getActualStock(id) {
             }
         }
     };
-    xhttp.open("POST", "http://localhost/tutorials/warehouse-system/get.php", true);
+    xhttp.open("POST", "https://rhswarehouse.000webhostapp.com/get.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("get=" + id);
 }
