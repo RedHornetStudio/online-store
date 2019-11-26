@@ -67,13 +67,9 @@ function getProduct(id) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var product = JSON.parse(this.responseText);
-            if(product == '') {
-                var productTitle = document.getElementById('product-title');
-                productTitle.innerText = 'No such product';
-                var buttonGetActualStock = document.getElementById('btn-get-actual-stock');
-                buttonGetActualStock.style.display = 'none';
-            } else {
+            try {
+                var product = JSON.parse(this.responseText);
+
                 var productTitle = document.getElementById('product-title');
                 productTitle.innerText = product[0].title;
 
@@ -85,6 +81,11 @@ function getProduct(id) {
 
                 var productStock = document.getElementById('product-stock');
                 productStock.innerText = 'Stock: ' + product[0].stock;
+            } catch (e) {
+                var productTitle = document.getElementById('product-title');
+                productTitle.innerText = 'no such product';
+                var buttonGetActualStock = document.getElementById('btn-get-actual-stock');
+                buttonGetActualStock.style.display = 'none';
             }
         }
     };
@@ -97,8 +98,12 @@ function getActualStock(id) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            var product = JSON.parse(this.responseText);
-            if(product == '') {
+            try {
+                var product = JSON.parse(this.responseText);
+
+                var productStock = document.getElementById('product-stock');
+                productStock.innerText = 'Stock: ' + product[0].stock;
+            } catch {
                 var productTitle = document.getElementById('product-title');
                 productTitle.innerText = 'No such product';
 
@@ -113,12 +118,7 @@ function getActualStock(id) {
 
                 var productStock = document.getElementById('product-stock');
                 productStock.innerText = '';
-            } else {
-                var productStock = document.getElementById('product-stock');
-                productStock.innerText = 'Stock: ' + product[0].stock;
             }
-            var productStock = document.getElementById('product-stock');
-            productStock.innerText = 'Stock: ' + product[0].stock;
         }
     };
     xhttp.open("POST", "http://localhost/tutorials/warehouse-system/get.php", true);

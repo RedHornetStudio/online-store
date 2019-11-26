@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
 </head>
-<body onload="getProduct(<?php echo $id; ?>)">
+<body onload="getProduct('<?php echo htmlspecialchars($id); ?>')">
 <div id="main-screen">
     <header>
         <nav>
